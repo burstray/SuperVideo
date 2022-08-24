@@ -39,7 +39,7 @@ namespace SuperVideo.common
             try
             {
                 FileStream fsr = new FileStream(FileName, FileMode.Open, FileAccess.Read);
-                byte[] readBytes = new byte[HttpServer.BufferSize + 16];
+                byte[] readBytes = new byte[HttpServer.BufferSize + 32];
                 int len = fsr.Read(readBytes, 0, readBytes.Length);
                 byte[] en = SecurityUtils.AesDecrypt(Password, readBytes);
                 fsr.Close();

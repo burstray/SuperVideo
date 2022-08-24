@@ -47,25 +47,26 @@ namespace SuperVideo.common
                         HttpListenerContext ctx = httpListener.GetContext();
                         string ua = ctx.Request.UserAgent;
                         string token = ctx.Request.QueryString["token"];
-                        if (string.IsNullOrEmpty(ua) ||
-                            (!ua.StartsWith("Windows-Media-Player") && !ua.StartsWith("NSPlayer") && !ua.StartsWith("VLC"))
-                            || string.IsNullOrEmpty(token) || !token.Equals(Token))
-                        {
-                            ctx.Response.StatusCode = 403;
-                            ctx.Response.Close();
-                            continue;
-                        }
+                        //if (string.IsNullOrEmpty(ua) ||
+                        //    (!ua.StartsWith("Windows-Media-Player") && !ua.StartsWith("NSPlayer") && !ua.StartsWith("VLC"))
+                        //    || string.IsNullOrEmpty(token) || !token.Equals(Token))
+                        //{
+                        //    ctx.Response.StatusCode = 403;
+                        //    ctx.Response.Close();
+                        //    continue;
+                        //}
 
                         string querys = Path.GetFileName(ctx.Request.RawUrl);
                         string category = HttpUtility.ParseQueryString(querys).Get("category"); //避免中文乱码
                         string file = HttpUtility.ParseQueryString(querys).Get("file");
-                        string filename = frmMain.VideoDir + category + "\\" + file;
-                        if (string.IsNullOrEmpty(token) || !token.Equals(Token) || !File.Exists(filename))
-                        {
-                            ctx.Response.StatusCode = 404;
-                            ctx.Response.Close();
-                            continue;
-                        }
+                        //string filename = frmMain.VideoDir + category + "\\" + file;
+                        string filename = frmMain.VideoDir + "\\" + querys;
+                        //if (string.IsNullOrEmpty(token) || !token.Equals(Token) || !File.Exists(filename))
+                        //{
+                        //    ctx.Response.StatusCode = 404;
+                        //    ctx.Response.Close();
+                        //    continue;
+                        //}
 
                         OutputFile(ctx, filename);
                     }
@@ -109,7 +110,7 @@ namespace SuperVideo.common
                         }
                         else
                         {
-                            byte[] en = SecurityUtils.AesDecrypt(Key, readBytes);
+                            byte[] en = SecurityUtils.AesDecrypt("1234560000000000", readBytes);
                             writer.Write(en, 0, en.Length);
                         }
                         writer.Flush();

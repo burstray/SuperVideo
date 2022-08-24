@@ -76,7 +76,9 @@ namespace SuperVideo.tools
                 Array.Copy(decryptBytes, dec, dec.Length);
                 return dec;   //将字符串后尾的'\0'去掉
             }
-            catch { }
+
+            catch(Exception ex)
+            { }
             return null;
         }
 

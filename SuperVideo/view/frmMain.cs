@@ -64,10 +64,10 @@ namespace SuperVideo
             loading.Dock = DockStyle.Fill;
             loading.SendToBack();
             config = ApplicationConfig.Load<ApplicationConfig>();
-            LogManager.Instance.SetAutoSave(config.AutoSaveLog).SetFileName(config.LogFile).Init();
-            LogManager.Instance.LogLevel = config.LogLevel;
-            LogoLotion = LogoLotion.Right;
-            LogoImage = Resources.titlebar_right;
+            //LogManager.Instance.SetAutoSave(config.AutoSaveLog).SetFileName(config.LogFile).Init();
+            //LogManager.Instance.LogLevel = config.LogLevel;
+            //LogoLotion = LogoLotion.Right;
+            //LogoImage = Resources.titlebar_right;
 
             InitDir();
 
