@@ -55,7 +55,7 @@ namespace SuperVideo.controls
                 string text = ts.ToString("c");// "加载中 ...";
 
                 Font font = FontUtility.LoadDigitFont(18);
-                SizeF sizef = e.Graphics.MeasureString(text, font);
+                //SizeF sizef = e.Graphics.MeasureString(text, font);
                 Rectangle r = new Rectangle((Width - 96) / 2, (Height - 30) / 2, 96, 30);
                 GraphicsPath myPath = GetPath(r, 3);
                 e.Graphics.FillPath(new SolidBrush(Color.LightGray), myPath);
@@ -64,7 +64,7 @@ namespace SuperVideo.controls
                 StringFormat format = new StringFormat();
                 format.Alignment = StringAlignment.Center;
                 format.LineAlignment = StringAlignment.Center;
-                e.Graphics.DrawString(text, font, new SolidBrush(Color.DarkGreen), rect, format);
+                //e.Graphics.DrawString(text, font, new SolidBrush(Color.DarkGreen), rect, format);
                 new Thread(() => { Thread.Sleep(50); Invoke(new Action(() => { Invalidate(); })); }).Start();
             }
         }

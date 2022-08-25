@@ -16,14 +16,14 @@ using Vlc.DotNet.Core;
 
 namespace SuperVideo.view
 {
-    public partial class frmVideoPlayer : RStyleBaseForm
+    public partial class frmVideoPlayer : Form
     {
         public string Url { get; set; }
         public string FileName { get; set; }
 
         public frmVideoPlayer()
         {
-            CanResize = true;
+            //CanResize = true;
             InitializeComponent();
         }
 

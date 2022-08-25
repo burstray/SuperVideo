@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVideoPlayer));
             this.Player = new Vlc.DotNet.Forms.VlcControl();
-            this.PanelBody.SuspendLayout();
+            //this.PanelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PanelBody
-            // 
-            this.PanelBody.Controls.Add(this.Player);
-            this.PanelBody.Location = new System.Drawing.Point(1, 1);
-            this.PanelBody.Size = new System.Drawing.Size(745, 527);
-            this.PanelBody.Controls.SetChildIndex(this.Player, 0);
-            this.PanelBody.Controls.SetChildIndex(this.TitleBar, 0);
+            //// 
+            //// PanelBody
+            //// 
+            //this.PanelBody.Controls.Add(this.Player);
+            //this.PanelBody.Location = new System.Drawing.Point(1, 1);
+            //this.PanelBody.Size = new System.Drawing.Size(745, 527);
+            //this.PanelBody.Controls.SetChildIndex(this.Player, 0);
+            //this.PanelBody.Controls.SetChildIndex(this.TitleBar, 0);
             // 
             // TitleBar
             // 
-            this.TitleBar.Size = new System.Drawing.Size(745, 35);
+            //this.TitleBar.Size = new System.Drawing.Size(745, 35);
             // 
             // Player
             // 
@@ -73,7 +73,7 @@
             this.Text = "frmVideoPlayer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmVideoPlayer_FormClosing);
             this.Load += new System.EventHandler(this.frmVideoPlayer_Load);
-            this.PanelBody.ResumeLayout(false);
+            //this.PanelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
             this.ResumeLayout(false);
 

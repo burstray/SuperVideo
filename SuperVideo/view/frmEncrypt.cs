@@ -133,11 +133,11 @@ namespace SuperVideo.view
                 string formatSize = FileUtility.GetFileSize(size);
                 labSize.Text = string.Format("大小：{0}", formatSize);
 
-                string d = FFmpegUtility.GetDuration(ofd.FileName);
-                labTime.Text = string.Format("时长：{0}", d);
+                //string d = FFmpegUtility.GetDuration(ofd.FileName);
+                //labTime.Text = string.Format("时长：{0}", d);
 
                 trackBar.Minimum = 1;
-                trackBar.Maximum = GetDurationInt(d);
+                //trackBar.Maximum = GetDurationInt(d);
                 trackBar.Value = 1;
                 password = "";
                 int len = trackBar.Maximum > 10 ? 10 : 1;

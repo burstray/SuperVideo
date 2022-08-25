@@ -105,8 +105,16 @@ namespace SuperVideo.common
                         {
                             byte[] rest = new byte[len];
                             Array.Copy(readBytes, rest, len);
-                            byte[] en = SecurityUtils.AesDecrypt(Key, rest);
-                            writer.Write(en, 0, en.Length);
+
+                            try
+                            {
+                                byte[] en = SecurityUtils.AesDecrypt(Key, rest);
+                                writer.Write(en, 0, en.Length);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("OutputFile exception: " + ex.Message);//Ray 20220825 added
+                            }
                         }
                         else
                         {

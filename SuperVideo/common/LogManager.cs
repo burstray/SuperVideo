@@ -162,10 +162,17 @@ namespace SuperVideo.common
 
             lock (Locker)
             {
-                LogQueue.Clear();
-                WriteQueue.Clear();
-                LogQueue = null;
-                WriteQueue = null;
+                try
+                {
+                    LogQueue.Clear();
+                    WriteQueue.Clear();
+                }
+                catch { }
+                finally
+                {
+                    LogQueue = null;
+                    WriteQueue = null;
+                }
             }
 
             TryToCloseStream();
