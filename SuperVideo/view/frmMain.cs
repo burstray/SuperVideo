@@ -99,13 +99,18 @@ namespace SuperVideo
             if (!string.IsNullOrEmpty(config.VideoDir) &&
             Directory.Exists(config.VideoDir))
             {
-                VideoDir = config.VideoDir + "\\video\\";
-                VideoTmp = config.VideoDir + "\\video\\tmp\\";
+                //VideoDir = config.VideoDir + "\\video\\";
+                //VideoTmp = config.VideoDir + "\\video\\tmp\\";
+
+                VideoDir = config.VideoDir + "\\";
+                VideoTmp = config.VideoDir + "\\tmp\\";
             }
             else
             {
-                VideoDir = AppDomain.CurrentDomain.BaseDirectory + "\\video\\";
-                VideoTmp = AppDomain.CurrentDomain.BaseDirectory + "\\video\\tmp\\";
+                //VideoDir = AppDomain.CurrentDomain.BaseDirectory + "\\video\\";
+                //VideoTmp = AppDomain.CurrentDomain.BaseDirectory + "\\video\\tmp\\";
+                VideoDir = AppDomain.CurrentDomain.BaseDirectory + "\\";
+                VideoTmp = AppDomain.CurrentDomain.BaseDirectory + "\\tmp\\";
             }
         }
 

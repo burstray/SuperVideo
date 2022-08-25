@@ -164,13 +164,26 @@ namespace SuperVideo.common
             {
                 try
                 {
-                    LogQueue.Clear();
-                    WriteQueue.Clear();
+                    if (LogQueue != null)
+                    {
+                        LogQueue.Clear();
+                    }
                 }
                 catch { }
                 finally
                 {
                     LogQueue = null;
+                }
+                try
+                {
+                    if (WriteQueue != null)
+                    {
+                        WriteQueue.Clear();
+                    }
+                }
+                catch { }
+                finally
+                {
                     WriteQueue = null;
                 }
             }
